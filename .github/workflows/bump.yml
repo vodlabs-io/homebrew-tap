@@ -1,0 +1,33 @@
+name: bump
+# Pins the cask and the formula to the latest recorder release.
+on:
+  schedule:
+    - cron: "17 */6 * * *"
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Release to pin (default: latest)"
+        required: false
+
+permissions:
+  contents: write
+
+concurrency: bump
+
+jobs:
+  bump:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Pin the release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: scripts/bump.sh "${{ inputs.version }}"
+      - name: Commit
+        run: |
+          git diff --quiet && { echo "already current"; exit 0; }
+          v=$(sed -nE 's/^ *version "([^"]+)"/\1/p' Formula/vod.rb)
+          git config user.name "VodLabs"
+          git config user.email "dev@vodlabs.io"
+          git commit -am "vodlabs-recorder, vod $v"
+          git push

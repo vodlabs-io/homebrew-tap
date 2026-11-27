@@ -18,3 +18,6 @@ The desktop app updates itself. Update `vod` with `brew upgrade vod`.
 Source, documentation and issues: [vodlabs-io/recorder](https://github.com/vodlabs-io/recorder).
 VodLabs Recorder is source-available under the
 [PolyForm Noncommercial License 1.0.0](https://github.com/vodlabs-io/recorder/blob/main/LICENSE).
+
+A scheduled workflow pins each new release, after verifying its build
+attestations, within six hours of publication.

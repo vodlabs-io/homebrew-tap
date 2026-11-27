@@ -1,9 +1,9 @@
 cask "vodlabs-recorder" do
   arch arm: "arm64", intel: "x64"
 
-  version "0.0.29"
-  sha256 arm:   "fac330af5bdc8e27e1d69ace4a26151c4805a3bd107e38c453f8bf118b40b8d0",
-         intel: "e17e9d94b20432884ec3cced6338923ba9ff96a99086d8945c49c9ba6dc96b9a"
+  version "0.0.30"
+  sha256 arm:   "3efd0e1b1b43a0541b55927c2b2640445f726a077322ca355290f63e24926d60",
+         intel: "6a0fb8c36d43be0ad3a4885a2fcbb16b778edd808b07df1ab20698960550b0ca"
 
   url "https://github.com/vodlabs-io/recorder/releases/download/v#{version}/VodLabs-Recorder-macOS-#{arch}.dmg"
   name "VodLabs Recorder"
