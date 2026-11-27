@@ -4,7 +4,9 @@
 the free live stream recorder.
 
 ```sh
-# The desktop app (macOS 14 or later)
+# The desktop app (macOS 14 or later). Homebrew asks you to trust a cask
+# from outside its own repositories before it installs it.
+brew trust --cask vodlabs-io/tap/vodlabs-recorder
 brew install --cask vodlabs-io/tap/vodlabs-recorder
 
 # The vod command-line tool (macOS or Linux)
